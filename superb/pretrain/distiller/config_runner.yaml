@@ -1,0 +1,44 @@
+runner:
+  n_epochs: -1
+  total_steps: 200000
+  gradient_clipping: 5.0
+  gradient_accumulate_steps: 1
+
+  log_step: 50
+  save_step: 2500
+  eval_step: 2500
+  max_keep: 5
+
+  fp16: true
+
+optimizer:
+  name: AdamW_with_schedule
+  lr: 2.e-4
+  warmup_proportion: 0.07
+  betas: [0.9, 0.98]
+  eps: 1.e-6
+  weight_decay: 1.e-6
+
+pretrain_expert:
+  datarc:
+    num_workers: 24
+    train_batch_size: 24
+    dev_batch_size: 24
+    max_timestep: 0
+    libri_root: /work/gerber68/Data/LibriSpeech/
+    file_path: /work/gerber68/ROBUST-S3PRL/robust-s3prl/s3prl/data/librispeech/len_for_bucket
+    trainsets: ['train-clean-100', 'train-clean-360', 'train-other-500']
+    devsets: ['dev-clean']
+    teacher:
+      distortion_mode: 'double' # single: one distortion, double: one additive and one non_additive distortion, ~: no distortions added
+      distortion_same_as_student: False # True to use exactly same distortion as student, False otherwise. Set to False for clean teacher input. 
+      distortion_types: ['mn', 'g', 'r'] # c: clean, m: musan, g: Gaussian, r: reverberation. This is for single distortion setting.
+      additive_dist_types: ['m', 'g', 'wham'] # Each distortion is sampled uniformly.
+      non_additive_dist_types: ['r', 'p', 'b']
+      distortion_config: pretrain/distiller/distortion_config.yaml
+    student:
+      distortion_mode: 'double'
+      distortion_types: ['mn', 'g', 'r'] # c: clean, m: musan, g: Gaussian, r: reverberation. This is for single distortion setting.
+      additive_dist_types: ['m', 'g', 'wham'] # Each distortion is sampled uniformly.
+      non_additive_dist_types: ['r', 'p', 'b']
+      distortion_config: pretrain/distiller/distortion_config.yaml

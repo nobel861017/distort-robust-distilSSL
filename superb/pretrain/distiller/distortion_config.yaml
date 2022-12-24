@@ -1,0 +1,36 @@
+# distortion_prob should have the same number as the number 
+# of distortions of distortion_type in config.yaml
+# ex: distortion_type: m, with distortion_prob = [0.5]
+# means that distortions(musan noise) are given 
+# at the probability of 0.5, while the other portion of 0.5
+# remains clean without distortions
+distortion_probs: [0.3, 0.4, 0.3] # [0.00001, 0.00001, 0.00001] # [0.3, 0.4, 0.3]  # 
+musan: /work/gerber68/Data/musan/
+musan_noise: /work/gerber68/Data/musan/noise/
+musan_speech: /work/gerber68/Data/musan/speech/
+musan_music: /work/gerber68/Data/musan/music/
+wham:
+  tr: /work/gerber68/Data/wham_noise/tr
+  cv: /work/gerber68/Data/wham_noise/cv
+  tt: /work/gerber68/Data/wham_noise/tt
+fsd50k: /work/gerber68/Data/FSD50K.eval_audio
+DNS_noise: /work/gerber68/DNS-Challenge/datasets_fullband/noise_fullband/
+DNS_rir: /work/gerber68/DNS-Challenge/datasets_fullband/impulse_responses/
+
+reverb: 
+  reverberance_min: 50
+  reverberance_max: 50
+  damping_min: 50
+  damping_max: 50
+  room_scale_min: 0
+  room_scale_max: 100
+bandrej: 
+  band_scaler: 0.5 # this is an error, value not provided
+pitch: 
+  pitch_shift_max: 500
+  pitch_quick: false
+time_drop: 
+  t_ms: 100
+clip: 
+  clip_min: 0.5
+  clip_max: 1.0
