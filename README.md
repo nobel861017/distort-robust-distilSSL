@@ -2,7 +2,7 @@
 
 This repository is based on [s3prl](https://github.com/s3prl/s3prl), and is not an official release or development of s3prl.
 - Code for [Improving Generalizability of Distilled Self-supervised Speech Processing Models under Distorted Settings]()
-- Currently supports five downstream tasks: `IC, ER, KS, SID, ASR`
+- Currently supports five downstream tasks: `IC, ER, KS, ASR`
 
 ## How to run
 - `-o` or `--override` can override any argument or config field with command line, which is at the highest priority. Please refer to the [override function](https://github.com/s3prl/s3prl/blob/master/s3prl/utility/helper.py) for definition.
