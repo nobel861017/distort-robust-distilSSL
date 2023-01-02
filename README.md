@@ -26,8 +26,6 @@ This repository is based on [s3prl](https://github.com/s3prl/s3prl), and is not 
   - Entropy: `config.downstream_expert.domain_classifier.objective=Entropy`
   - BCE: `config.downstream_expert.domain_classifier.objective=BCEWithLogitsLoss`
     - For BCE, please set `config.downstream_expert.domain_classifier.output_dim=1`
-- Upstream learning rate should be atleast ten times smaller than downstream learning rate
-  - ex: `config.optimizer.lr=1e-2,,config.optimizer_up.lr=1e-6`
 
 ### Example
 
