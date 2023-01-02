@@ -5,6 +5,8 @@ This repository is based on [s3prl](https://github.com/s3prl/s3prl), and is not 
 - Currently supports five downstream tasks: `IC, ER, KS, ASR`
 
 ## How to run
+- Modify the `superb` folder name into `s3prl`. Install the official [s3prl](https://github.com/s3prl/s3prl) toolkit according to the installation guidelines. Replace or move the files in this repository to the official [s3prl](https://github.com/s3prl/s3prl) repository following to the corresponding file structure.
+
 - `-o` or `--override` can override any argument or config field with command line, which is at the highest priority. Please refer to the [override function](https://github.com/s3prl/s3prl/blob/master/s3prl/utility/helper.py) for definition.
 - Support distortion modes:
   - None
