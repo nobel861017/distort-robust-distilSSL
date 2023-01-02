@@ -21,11 +21,6 @@ This repository is based on [s3prl](https://github.com/s3prl/s3prl), and is not 
     - p: pitch shift
     - fsd: FSD50k (only used for testing)
     - dns: DNS (only used for testing)
-- Support three domain classifier objectives
-  - CrossEntropyLoss: `config.downstream_expert.domain_classifier.objective=CrossEntropyLoss`
-  - Entropy: `config.downstream_expert.domain_classifier.objective=Entropy`
-  - BCE: `config.downstream_expert.domain_classifier.objective=BCEWithLogitsLoss`
-    - For BCE, please set `config.downstream_expert.domain_classifier.output_dim=1`
 
 ### Example
 
