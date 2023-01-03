@@ -1,7 +1,7 @@
 # distort-robust-distilSSL
 
 This repository is based on [s3prl](https://github.com/s3prl/s3prl), and is not an official release or development of s3prl.
-- Code for [Improving Generalizability of Distilled Self-supervised Speech Processing Models under Distorted Settings]()
+- Code for [Improving Generalizability of Distilled Self-supervised Speech Processing Models under Distorted Settings](https://arxiv.org/abs/2210.07978).
 - Currently supports five downstream tasks: `IC, ER, KS, ASR`
 
 ## How to run
